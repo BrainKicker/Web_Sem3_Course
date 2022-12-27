@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		  content="Some math for you" />
+	<title>Math</title>
+	<link rel="stylesheet"
+		  href="style.css" />
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<h1 style="text-align: center;">Математика</h1>
+	</header>
+
+	<aside>
+		<ul>
+			<a href="index.html">На главную</a>
+			<li><a href="grin.html">Формула Грина</a></li>
+			<li><a href="radical.html">Формула обобщённого радикала</a></li>
+			<li><a href="trigonometry-table.html">Таблица тригонометрических функций</a></li>
+			<li><a href="means.html">Средние значения</a></li>
+		</ul>
+	</aside>
+
+	<aside style="float:right; right: 0; text-align: center;">
+		<p><a href="form-feedback.html"
+			   style="color: pink;">Сообщить об ошибке</a></p>
+	</aside>
+
+	<main style="width: 60%; margin-left: auto; margin-right: auto;">
+
+		<div>
+			<h2>Средние значения</h2>
+
+			<p>Пусть дана функция \(\text{M}(X)\), где \(X\) &mdash; непустой массив неотрицательных чисел длины \(N\) (\(X = [x_1, x_2, ..., x_N], \ x_i \in \mathbb{R}_+, \ N &gt; 0\)). На вход функции \(\text{M}(X)\) может поступать массив любой длины (то есть \(N\) тоже является переменной).</p>
+			<p>\(\text{M}: \mathbb{R}_+^N \rightarrow \mathbb{R}_+\)</p>
+
+			<p>Функция \(\text{M}(X)\) обладает следующими свойствами:</p>
+
+			<ol>
+				<li>
+					<!-- 1-ое свойство -->
+					<p>Значение функции <i>не</i> зависит от порядка элементов в массиве:</p>
+					<p>\(\text{M}(x_1, x_2, ..., x_N) = \text{M}(x_{i_1}, x_{i_2}, ..., x_{i_N}), \ i_j \in \overline{1,N}, \ i_j \ne i_k \ | \ j \ne k\)</p>
+				</li>
+				<li>
+					<!-- 2-ое свойство -->
+					<p>Значение функции находится между минимальным и максимальным элементами массива:</p>
+					<p>\(\min{X} \leq \text{M}(X) \leq \max{X}\)</p>
+				</li>
+				<li>
+					<!-- 3-ое свойство -->
+					<p>Значения функции от массива \(X\) и от массива \(X \cup [\text{M}(X)]\) совпадают:</p>
+					<p>\(M(x_1, x_2, ..., x_N) = \text{M}(x_1, x_2, ..., x_N, \text{M}(X))\)</p>
+				</li>
+				<li>
+					<!-- 4-ое свойство -->
+					<p>Функция \(\text{M}(X)\) монотонно не убывает относительно каждого элемента массива:</p>
+					<p>\(\DeclareMathOperator{\dom}{dom}
+						\forall \ a, b \in \dom{\text{M}}: a &lt; b \Rightarrow
+						\text{M}(..., x_i = a, ...) \leq \text{M}(..., x_i = b, ...), \ i \in \overline{1,N}\)</p>
+				</li>
+				<li>
+					<!-- 5-ое свойство -->
+					<p>Если \(i\)-тый элемент массива меньше значения функции, то при его уменьшении он будет меньше нового значения функции. Если \(i\)-тый элемент массива больше значения функции, то при его увеличении он будет больше нового значения функции:</p>
+					<p>\(x_i &lt; \text{M}(X) \Rightarrow x_i - \epsilon &lt; \text{M}(..., x_i - \epsilon, ...), \ i \in \overline{1,N}, \ \epsilon &gt; 0\)</p>
+					<p>\(x_i &gt; \text{M}(X) \Rightarrow x_i + \epsilon &gt; \text{M}(..., x_i + \epsilon, ...), \ i \in \overline{1,N}, \ \epsilon &gt; 0\)</p>
+				</li>
+			</ol>
+
+			<p>Функцию, обладающую всеми этими свойствами, мы будем называть <em>средним значением</em>.</p>
+
+			<h3>Основные средние значения:</h3>
+
+			<ul>
+				<li>
+					<h4>Среднее арифметическое.</h4>
+					<h1>\(\frac{\sum_{i=1}^N{x_i}}{N}\)</h1>
+
+					<p>Доказательство свойств:</p>
+					<ol>
+						<li>
+							<!-- 1-ое свойство -->
+							<p>Элементы массива фигурируют только в сумме, а суммирование &mdash; коммутативная операция, следовательно, её значение не зависит от порядка элементов. Значит, и значение всего выражения не от него не зависит.</p>
+						</li>
+						<li>
+							<!-- 2-ое свойство -->
+							<p>Сравним три значения: \(\min{X}, \frac{\sum_{i=1}^N{x_i}}{N}, \max{X}\).</p>
+							<p>Умножим все три выражения на \(N\):</p>
+							<p>\(\min{X} \times N, \sum_{i=1}^N{x_i}, \max{X} \times N\)</p>
+							<p>В сумме \(N\) слагаемых, каждое из которых больше либо равно минимальному элементу и меньше либо равно максимальному, следовательно вся сумма больше либо равна \(N\)-ному количеству минимальных элементов и меньше либо равна \(N\)-ному количеству максимальных элементов:</p>
+							<p>\(\min{X} \times N \leq \sum_{i=1}^N{x_i} \leq \max{X} \times N\)</p>
+							<p>Делим каждое выражение на \(N\) и получаем:</p>
+							<p>\(\min{X} \leq \frac{\sum_{i=1}^N{x_i}}{N} \leq \max{X}\)</p>
+						</li>
+						<li>
+							<!-- 3-ое свойство -->
+							<p>\(\text{M}(X \cup \text{M}(X))
+								= \large \frac{\sum_{i=1}^N{x_i} + \frac{\sum_{i=1}^N{x_i}}{N}}{N+1} \normalsize
+								= \large \frac{N \times \sum_{i=1}^N{x_i} + N \times \frac{\sum_{i=1}^N{x_i}}{N}}{N(N+1)} \normalsize
+								= \large \frac{N \times \sum_{i=1}^N{x_i} + \sum_{i=1}^N{x_i}}{N(N+1)} \normalsize
+								= \large \frac{(N+1) \times \sum_{i=1}^N{x_i}}{N(N+1)} \normalsize
+								= \large \frac{\sum_{i=1}^N{x_i}}{N} \normalsize
+								= \text{M}(X)\)</p>
+						</li>
+						<li>
+							<!-- 4-ое свойство -->
+							<p>\(\large \frac{\partial \text{M}}{\partial x_i} \normalsize = \large \frac1N \normalsize, \ i \in [1,N]; \ N &gt; 0 \Rightarrow \large \frac1N \normalsize &gt; 0\)</p>
+							<p>Производная всегда больше нуля &mdash; значит она неотрицательна.</p>
+							<p>Производная существует и неотрицательна на всей области определения, значит функция монотонно не убывает относительно элемента \(x_i\).</p>
+						</li>
+						<li>
+							<!-- 5-ое свойство -->
+							<p>\(\sqsupset x_i &lt; \text{M}(X) \Leftrightarrow \text{M}(X) - x_i = \xi &gt; 0, \ i \in [1,N]; \ \epsilon &gt; 0:\)</p>
+							<p>\(\text{M}(..., x_i - \epsilon, ...) = \large \frac{\sum_{j=1}^{i-1}{x_j} + (x_i - \epsilon) + \sum_{j=i+1}^N{x_j}}{N} = \frac{\sum_{i=1}^N{x_i} - \epsilon}{N} = \frac{\sum_{i=1}^N{x_i}}{N} - \frac{\epsilon}{N} = \normalsize \text{M}(X) - \large \frac{\epsilon}{N} \normalsize\)</p>
+							<p>\(\text{M}(..., x_i - \epsilon, ...) - (x_i - \epsilon) = \normalsize \text{M}(X) - \large \frac{\epsilon}{N} \normalsize - x_i + \epsilon = (\text{M}(X) - x_i) + (\epsilon - \large \frac{\epsilon}{N} \normalsize) = \xi + \large \frac{N-1}{N} \normalsize \times \epsilon &gt; 0\)</p>
+							<p>Значит, \(x_i - \epsilon &lt; \text{M}(..., x_i - \epsilon, ...)\).</p>
+							<p>Аналогичные рассуждения проводятся для случая \(x_i &gt; \text{M}(X)\).</p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<h4>Среднее геометрическое.</h4>
+					<h2>\(\sqrt[N]{\prod_{i=1}^N{x_i}}\)</h2>
+
+					<p>Доказательство свойств:</p>
+					<ol>
+						<li>
+							<!-- 1-ое свойство -->
+							<p>Элементы массива фигурируют только в произведении, а это коммутативная операция, следовательно, её значение не зависит от порядка элементов. Значит, и значение всего выражения не от него не зависит.</p>
+						</li>
+						<li>
+							<!-- 2-ое свойство -->
+							<p>Сравним три значения: \(\min{X}, \sqrt[N]{\prod_{i=1}^N{x_i}}, \max{X}\).</p>
+							<p>Возведём все три выражения в \(N\)-ную степень:</p>
+							<p>\(\left(\min{X}\right)^N, \prod_{i=1}^N{x_i}, \left(\max{X}\right)^N\)</p>
+							<p>В левом произведении \(N\) множителей, каждое из которых меньше либо равно каждому множителю в произведении по центру, каждый из которых в свою очередь меньше либо равен каждому множителю в произведении справа.</p>
+							<p>Следовательно:</p>
+							<p>\(\left(\min{X}\right)^N \leq \prod_{i=1}^N{x_i} \leq \left(\max{X}\right)^N\)</p>
+							<p>Возводим все три выражения в степень \(\frac1N\) и получаем:</p>
+							<p>\(\min{X} \leq \sqrt[N]{\prod_{i=1}^N{x_i}} \leq \max{X}\)</p>
+						</li>
+						<li>
+							<!-- 3-ое свойство -->
+							<p>\(\text{M}(X \cup \text{M}(X))
+								= \sqrt[N+1]{\prod_{i=1}^N{x_i} \times \sqrt[N]{\prod_{i=1}^N{x_i}}}
+								= \sqrt[N+1]{\prod_{i=1}^N{x_i} \times \prod_{i=1}^N{x_i^{\frac1N}}}
+								= \sqrt[N+1]{\prod_{i=1}^N{x_i^{1+\frac1N}}} =\)</p>
+							<p>\(= \sqrt[N+1]{\prod_{i=1}^N{x_i^{\frac{N+1}{N}}}}
+								= \prod_{i=1}^N{\left(x_i^{\frac{N+1}{N}}\right)^{\frac{1}{N+1}}}
+								= \prod_{i=1}^N{x_i^{\frac1N}}
+								= \sqrt[N]{\prod_{i=1}^N{x_i}}
+								= \text{M}(X)\)</p>
+						</li>
+						<li>
+							<!-- 4-ое свойство -->
+
+						</li>
+					</ol>
+				</li>
+				<li>
+					<h4>Среднее гармоническое.</h4>
+					<h1>\(\frac{N}{\sum_{i=1}^N{\frac{1}{x_i}}}\)</h1>
+				</li>
+				<li>
+					<h4>Среднее квадратическое.</h4>
+					<h2>\(\sqrt{\frac{\sum_{i=1}^N{x_i^2}}{N}}\)</h2>
+				</li>
+			</ul>
+		</div>
+
+	</main>
+
+</body>
+
+</html>

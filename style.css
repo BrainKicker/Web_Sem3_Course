@@ -1,0 +1,20 @@
+.table td,
+.table th {
+    border: 1px solid #ccc;
+}
+
+.table {
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+.table thead {
+    background-color: #f0f1f4;
+}
+
+aside {
+    width: 18%;
+    font-size: 18px;
+    line-height: 30px;
+    position: fixed;
+}

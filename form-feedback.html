@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		  content="Some math for you" />
+	<title>Math</title>
+	<link rel="stylesheet"
+		  href="style.css" />
+	<link rel="stylesheet"
+		  href="form-style.css" />
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<h1 style="text-align: center;">Математика</h1>
+	</header>
+
+	<aside>
+		<ul>
+			<a href="index.html">На главную</a>
+			<li><a href="grin.html">Формула Грина</a></li>
+			<li><a href="radical.html">Формула обобщённого радикала</a></li>
+			<li><a href="trigonometry-table.html">Таблица тригонометрических функций</a></li>
+			<li><a href="means.html">Средние значения</a></li>
+		</ul>
+	</aside>
+
+	<main style="width: 60%; margin-left: auto; margin-right: auto;">
+
+		<div style="width: 40%; margin-left: auto; margin-right: auto;">
+            <br>
+
+            <h2>Сообщить об ошибке</h2>
+
+            <form id="form-feedback" action="form-feedback.js" method="post">
+            	<label>
+            		<h3>Электронная почта</h3>
+            		<div class="hbox">
+            			<input id="email"
+            				   type="email"
+            				   placeholder="example@email.com"
+            				   style="margin-right: var(--small-margin);"
+            				   required />
+            		</div>
+            	</label>
+
+				<label>
+					<h3>Раздел</h3>
+					<select id="section" required>
+						<option value="" disabled selected="selected">Выберите раздел</option>
+						<option value="main">Главная</option>
+						<option value="grin">Формула Грина</option>
+						<option value="radical">Формула обобщённого радикала</option>
+						<option value="trigonometry-table">Таблица тригонометрических функций</option>
+						<option value="means">Средние значения</option>
+					</select>
+				</label>
+
+            	<label>
+            		<h3>Проблема / Предложение по улучшению</h3>
+            		<div class="hbox">
+            			<textarea id="message"
+            					  placeholder="Сообщение"
+            					  style="resize: vertical;"
+            					  required></textarea>
+            		</div>
+            	</label>
+
+            	<input id="submit-button"
+            		   type="submit"
+            		   value="Отправить" />
+            </form>
+
+            <!-- <script>
+            	async function SendForm(e) {
+					
+            		e.preventDefault();
+
+            		// let response = await 
+					fetch('form-feedback.php', {
+            			method: 'POST',
+            			body: new FormData(document.getElementById('form-feedback'))
+            		});
+
+            		// let result = await response.json();
+
+            		// console.log(result);
+            	};
+
+            	document.getElementById('form-feedback').onsubmit = SendForm;
+            </script> -->
+
+		</div>
+
+	</main>
+
+</body>
+
+</html>

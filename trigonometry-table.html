@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		  content="Some math for you" />
+	<title>Math</title>
+	<link rel="stylesheet"
+		  href="style.css" />
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<h1 style="text-align: center;">Математика</h1>
+	</header>
+
+	<aside>
+		<ul>
+			<a href="index.html">На главную</a>
+			<li><a href="grin.html">Формула Грина</a></li>
+			<li><a href="radical.html">Формула обобщённого радикала</a></li>
+			<li><a href="trigonometry-table.html">Таблица тригонометрических функций</a></li>
+			<li><a href="means.html">Средние значения</a></li>
+		</ul>
+	</aside>
+
+	<aside style="float:right; right: 0; text-align: center;">
+		<p><a href="form-feedback.html"
+			   style="color: pink;">Сообщить об ошибке</a></p>
+	</aside>
+
+	<main style="width: 60%; margin-left: auto; margin-right: auto;">
+
+		<div>
+			<h2>Таблица тригонометрических функций</h2>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>x<sub>rad</sub></th>
+						<th>x<sub>deg</sub></th>
+						<th>sin(x)</th>
+						<th>cos(x)</th>
+						<th>tan(x)</th>
+						<th>ctg(x)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>$$0$$</td>
+						<td>$$0$$</td>
+						<td>$$0$$</td>
+						<td>$$1$$</td>
+						<td>$$0$$</td>
+						<td>$$&infin;$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{\pi}{2}$$</td>
+						<td>$$90$$</td>
+						<td>$$1$$</td>
+						<td>$$0$$</td>
+						<td>$$&infin;$$</td>
+						<td>$$0$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{\pi}{4}$$</td>
+						<td>$$45$$</td>
+						<td>$$\frac{1}{\sqrt{2}}$$</td>
+						<td>$$\frac{1}{\sqrt{2}}$$</td>
+						<td>$$1$$</td>
+						<td>$$1$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{\pi}{6}$$</td>
+						<td>$$30$$</td>
+						<td>$$\frac{1}{2}$$</td>
+						<td>$$\frac{\sqrt{3}}{2}$$</td>
+						<td>$$\frac{1}{\sqrt{3}}$$</td>
+						<td>$$\sqrt{3}$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{\pi}{3}$$</td>
+						<td>$$60$$</td>
+						<td>$$\frac{\sqrt{3}}{2}$$</td>
+						<td>$$\frac{1}{2}$$</td>
+						<td>$$\sqrt{3}$$</td>
+						<td>$$\frac{1}{\sqrt{3}}$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{\pi}{12}$$</td>
+						<td>$$15$$</td>
+						<td style="background-color: #0f04;">$$\frac{\sqrt{2-\sqrt{3}}}{2}$$</td>
+						<td style="background-color: #0fa4;">$$\frac{\sqrt{2+\sqrt{3}}}{2}$$</td>
+						<td>$$2-\sqrt{3}$$</td>
+						<td>$$2+\sqrt{3}$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{5\pi}{12}$$</td>
+						<td>$$75$$</td>
+						<td style="background-color: #0fa4;">$$\frac{\sqrt{6}+\sqrt{2}}{4}$$</td>
+						<td style="background-color: #0f04;">$$\frac{\sqrt{6}-\sqrt{2}}{4}$$</td>
+						<td>$$2+\sqrt{3}$$</td>
+						<td>$$2-\sqrt{3}$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{\pi}{8}$$</td>
+						<td>$$22.5$$</td>
+						<td>$$\frac{\sqrt{2-\sqrt{2}}}{2}$$</td>
+						<td>$$\frac{\sqrt{2+\sqrt{2}}}{2}$$</td>
+						<td>$$\sqrt{2}-1$$</td>
+						<td>$$\sqrt{2}+1$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{3\pi}{8}$$</td>
+						<td>$$67.5$$</td>
+						<td>$$\frac{\sqrt{2+\sqrt{2}}}{2}$$</td>
+						<td>$$\frac{\sqrt{2-\sqrt{2}}}{2}$$</td>
+						<td>$$\sqrt{2}+1$$</td>
+						<td>$$\sqrt{2}-1$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{\pi}{5}$$</td>
+						<td>$$36$$</td>
+						<td>$$\frac{\sqrt[4]{5}}{2\sqrt{\varphi}}$$</td>
+						<td>$$\frac{\varphi}{2}$$</td>
+						<td>$$\frac{\sqrt[4]{5}}{\varphi^{\frac32}}$$</td>
+						<td>$$\frac{\varphi^{\frac32}}{\sqrt[4]{5}}$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{3\pi}{10}$$</td>
+						<td>$$54$$</td>
+						<td>$$\frac{\varphi}{2}$$</td>
+						<td>$$\frac{\sqrt[4]{5}}{2\sqrt{\varphi}}$$</td>
+						<td>$$\frac{\varphi^{\frac32}}{\sqrt[4]{5}}$$</td>
+						<td>$$\frac{\sqrt[4]{5}}{\varphi^{\frac32}}$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{2\pi}{5}$$</td>
+						<td>$$72$$</td>
+						<td style="background-color: #0f04;">
+							$$\frac{\sqrt[4]{5}}{2}\frac{\sqrt{\varphi}+\frac{1}{\sqrt{\varphi}}}{\varphi}$$</td>
+						<td style="background-color: #0fa4;">$$\frac{1}{2\varphi}$$</td>
+						<td style="background-color: #a0f4;">
+							$$\sqrt[4]{5}\left(\sqrt{\varphi}+\frac{1}{\sqrt{\varphi}}\right)$$</td>
+						<td style="background-color: #af04;">
+							$$\frac{1}{\sqrt[4]{5}}\left(\sqrt{\varphi}-\frac{1}{\sqrt{\varphi}}\right)$$</td>
+					</tr>
+					<tr>
+						<td>$$\frac{\pi}{10}$$</td>
+						<td>$$18$$</td>
+						<td style="background-color: #0fa4;">$$\frac{\sqrt{2-\varphi}}{2}$$</td>
+						<td style="background-color: #0f04;">$$\frac{\sqrt{2+\varphi}}{2}$$</td>
+						<td style="background-color: #af04;">$$\sqrt{\frac{2-\varphi}{2+\varphi}}$$</td>
+						<td style="background-color: #a0f4;">$$\sqrt{\frac{2+\varphi}{2-\varphi}}$$</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</main>
+
+</body>
+
+</html>

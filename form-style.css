@@ -1,0 +1,63 @@
+:root {
+    --small-padding: 4px;
+    --small-margin: 4px;
+}
+
+
+#question-comment-form {
+
+    min-width: 200px;
+    max-width: 500px;
+    width: 500px;
+
+    padding: 10px;
+}
+
+
+.vbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.vbox>* {
+    display: flex;
+    flex: 1;
+    height: 0;
+}
+
+
+.hbox {
+    display: flex;
+}
+
+.hbox>* {
+    display: flex;
+    flex: 1;
+    width: 0;
+}
+
+
+#submit-button {
+
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 7px;
+
+    color: white;
+    background-color: black;
+
+    padding: 0.8em 2em;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+input,
+textarea {
+    border: none;
+    border-radius: 7px;
+    background-color: #eee;
+    padding: 1em;
+}

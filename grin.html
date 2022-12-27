@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		  content="Some math for you" />
+	<title>Math</title>
+	<link rel="stylesheet"
+		  href="style.css" />
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<h1 style="text-align: center;">Математика</h1>
+	</header>
+
+	<aside>
+		<ul>
+			<a href="index.html">На главную</a>
+			<li><a href="grin.html">Формула Грина</a></li>
+			<li><a href="radical.html">Формула обобщённого радикала</a></li>
+			<li><a href="trigonometry-table.html">Таблица тригонометрических функций</a></li>
+			<li><a href="means.html">Средние значения</a></li>
+		</ul>
+	</aside>
+
+	<aside style="float:right; right: 0; text-align: center;">
+		<p><a href="form-feedback.html"
+			   style="color: pink;">Сообщить об ошибке</a></p>
+	</aside>
+
+	<main style="width: 60%; margin-left: auto; margin-right: auto;">
+
+		<div>
+			<h2>Формула Грина</h2>
+
+			<p>Для многоугольника без самопересечений и дырок с вершинами в целых точках:</p>
+			<p>S = i + <sup>b</sup>&frasl;<sub>2</sub> &minus; 1</p>
+			<p>, где S &mdash; площадь, i &mdash; количество целых точек внутри многоугольника, b &mdash; количество целых точек на границе многоугольника.</p>
+
+			<p>Для многоугольника без самопересечений (но с дырками, общий случай) с вершинами в целых точках:</p>
+			<p>S = i + <sup>b</sup>&frasl;<sub>2</sub> + h &minus; 1</p>
+			<p>, где S &mdash; площадь, i &mdash; количество целых точек внутри многоугольника (между внешней и внутренними границами), b &mdash; количество целых точек на границе многоугольника (в том числе на внутренних границах), h &mdash; количество дырок.</p>
+		</div>
+
+	</main>
+
+</body>
+
+</html>
